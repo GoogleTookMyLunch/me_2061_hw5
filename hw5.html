@@ -1,0 +1,671 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Homework 5 &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hw5';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Homework 5
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/hw5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Homework 5</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-calculations">Part 1 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-calculations">Part 2 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-calculations">Part 3 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-calculations">Part 4 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-calculations">Part 5 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-calculations">Part 6 Calculations</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="homework-5">
+<h1>Homework 5<a class="headerlink" href="#homework-5" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>All mathematical calculations are performed by hand.</strong> They are simply displayed using Markdown and <span class="math notranslate nohighlight">\(\mathrm{\LaTeX{}}\)</span>.  Python code, when used, is only used to check hand-calculations or when instructed to do so by the problem prompt.</p>
+<p>Vectors are written in bold lower-case letters (<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>), matrices are written in bold upper-case letters (<span class="math notranslate nohighlight">\(\mathbf{A}\)</span>), and scalers are written as italicized lower-case letters (<span class="math notranslate nohighlight">\(c\)</span>). Unless specified, all elements <span class="math notranslate nohighlight">\(\epsilon \in \mathbb{R}\)</span>.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Answer</p>
+<p>Final answers are formatted like this.</p>
+</div>
+<p>Consider the transient heat conduction in a rod where the heat transfer can be accurately modeled via the one-dimensional time-dependent heat conduction given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial{}T}{\partial{}t} = \alpha{} \frac{\partial{}^{2}T}{\partial{}x^{2}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(0 \leq x \leq 1, 0 \leq t \leq 5\)</span> and <span class="math notranslate nohighlight">\(T(x, t)\)</span> is the transient temperature and <span class="math notranslate nohighlight">\(\alpha{} = 0.01\)</span> is the thermal diffusivity.  THe inital condition is specified as:</p>
+<div class="math notranslate nohighlight">
+\[
+T(x, 0) = \alpha_{1} \exp{(-100(x - 0.25)^{2})} + \alpha_{2} \exp{(-100(x - 0.75)^{2})}
+\]</div>
+<p>The solution of this problem is shown in the figure below for <span class="math notranslate nohighlight">\(\alpha_{1} = 1\)</span> and <span class="math notranslate nohighlight">\(\alpha_{2} = 2\)</span></p>
+<p><img alt="transient temperature surface" src="_images/fig_1_hw5.png" /></p>
+<p>You can run the chebfun PDE solver to solve this problem by executing <code class="docutils literal notranslate"><span class="pre">HW5.m</span></code> from Canvas.  Consider two cases: Case I: <span class="math notranslate nohighlight">\(\alpha_{1} = \alpha_{2} = 1\)</span> and Case II: <span class="math notranslate nohighlight">\(\alpha_{1} = 1 \text{ and } \alpha_{2} = 3\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">HW5.m</span></code>. The data generated by chebfun is in discrete form in time with k = 101 snapshots and it is in continuous form in the spatial direction.  Generate a matrix data of spatio-temporal temperature on a uniform grid in space generated by <code class="docutils literal notranslate"><span class="pre">X=linspace(0,</span> <span class="pre">1,</span> <span class="pre">n)</span></code>, where <span class="math notranslate nohighlight">\(n = 501\)</span>.  This can be accomplished by <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">T(X,</span> <span class="pre">:)</span></code>.  The size of matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> must be 501 <span class="math notranslate nohighlight">\(\times\)</span> 101.  Plot the temperature surface for Case I and Case II.</p></li>
+<li><p>Plot the first three spatial modes versus <span class="math notranslate nohighlight">\(x\)</span> for both cases.</p></li>
+<li><p>Plot the singular values (<span class="math notranslate nohighlight">\(\sigma_{i}\text{'s}\)</span> in <code class="docutils literal notranslate"><span class="pre">semilogy</span></code> axis for both cases.</p></li>
+<li><p>One criterion for reduction is to compute the percentage of “energy” captured by the PCA reduction with <span class="math notranslate nohighlight">\(r\)</span> modes as follows:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+e(r) = \frac{\sum_{i = 1}^{r} \sigma_{i}}{\sum_{i = 1}^{k} \sigma_{i}} \times 100
+\]</div>
+<p>Find the minimum number of modes <span class="math notranslate nohighlight">\(r\)</span> required to have <span class="math notranslate nohighlight">\(e(r) \geq 99\%\)</span>.</p>
+<ol class="arabic simple" start="5">
+<li><p>Plot the reconstructed temperature at <span class="math notranslate nohighlight">\(t = 1, 3, 5\)</span> for each of the cases with <span class="math notranslate nohighlight">\(r = 1\)</span> and <span class="math notranslate nohighlight">\(r = 2\)</span>.</p></li>
+<li><p>Use the spatial SVD modes of Case I for the reconstruction of the data in Case II at <span class="math notranslate nohighlight">\(t = 1, 3, \text{ and } 5\)</span>.  To this end, you need to project the data from Case II at each of the time instants to the spatial basis from Case I.  Take <span class="math notranslate nohighlight">\(r = 5, 10, \text{ and } 15\)</span> modes from Case I and plot the true temperature along with the reconstructed one.  Explain the observations you make in these results.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">f</span></code> from <code class="docutils literal notranslate"><span class="pre">SolveState.m</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</div>
+<section id="part-1-calculations">
+<h2>Part 1 Calculations<a class="headerlink" href="#part-1-calculations" title="Permalink to this heading">#</a></h2>
+<p>The following matlab code was used to plot the results.  <code class="docutils literal notranslate"><span class="pre">a_1</span></code> and <code class="docutils literal notranslate"><span class="pre">a_2</span></code> were changed accordingly to the Case.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clc</span>
+<span class="n">clear</span> <span class="nb">all</span>
+<span class="n">close</span> <span class="nb">all</span>
+<span class="n">LW</span> <span class="o">=</span> <span class="s1">&#39;LineWidth&#39;</span><span class="p">;</span>
+<span class="nb">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s1">&#39;latex&#39;</span><span class="p">)</span>
+
+<span class="o">%%</span> <span class="o">---------</span> <span class="n">Space</span><span class="o">-</span><span class="n">Time</span> <span class="n">Discretization</span> <span class="o">----------</span>
+<span class="n">Domain</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mf">.05</span><span class="p">:</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">chebfun</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">Domain</span><span class="p">);</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">501</span><span class="p">;</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">.01</span><span class="p">;</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">c</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">a_1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">a_2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="o">%%</span> <span class="o">---------</span> <span class="n">Solve</span> <span class="n">the</span> <span class="n">PDE</span>  <span class="o">----------</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="p">(</span><span class="n">a_1</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">.25</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">a_2</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.75</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">T</span><span class="o">=</span><span class="n">SolveState</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="s1">&#39;;</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">T</span><span class="p">(</span><span class="n">X</span><span class="p">,:);</span>
+
+<span class="o">%%</span> <span class="o">---------</span> <span class="n">Plot</span> <span class="n">the</span> <span class="n">result</span>  <span class="o">----------</span>
+
+<span class="o">%</span> <span class="n">Set</span> <span class="n">up</span> <span class="n">the</span> <span class="n">figure</span>
+<span class="n">figure</span>
+<span class="n">hold</span> <span class="n">on</span>
+
+<span class="o">%</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">surface</span> <span class="n">plot</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;EdgeColor&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="o">%</span> <span class="n">Customize</span> <span class="n">the</span> <span class="n">plot</span>
+<span class="n">shading</span> <span class="n">interp</span>
+<span class="n">colormap</span> <span class="n">jet</span>
+<span class="n">view</span><span class="p">([</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Space (x)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Time (t)&#39;</span><span class="p">)</span>
+<span class="n">zlabel</span><span class="p">(</span><span class="s1">&#39;Temperature (T(x,t))&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Transient Temperature Surface&#39;</span><span class="p">)</span>
+
+<span class="o">%</span> <span class="n">Additional</span> <span class="n">customization</span> <span class="k">for</span> <span class="n">aesthetics</span>
+<span class="n">axis</span> <span class="n">tight</span>
+<span class="n">grid</span> <span class="n">on</span>
+<span class="n">box</span> <span class="n">on</span>
+
+<span class="o">%</span> <span class="n">Add</span> <span class="n">a</span> <span class="n">color</span> <span class="n">bar</span> <span class="n">to</span> <span class="n">indicate</span> <span class="n">the</span> <span class="n">temperature</span> <span class="n">scale</span>
+<span class="n">colorbar</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Answer</p>
+<p><strong>Case I</strong></p>
+<p><img alt="Case I result" src="_images/case1.png" /></p>
+<p><strong>Case II</strong></p>
+<p><img alt="Case II result" src="_images/case2.png" /></p>
+</div>
+</section>
+<section id="part-2-calculations">
+<h2>Part 2 Calculations<a class="headerlink" href="#part-2-calculations" title="Permalink to this heading">#</a></h2>
+<p>The following code was used to plot the results with <span class="math notranslate nohighlight">\(\alpha\)</span> adjusted accordingly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Extract</span> <span class="n">the</span> <span class="n">first</span> <span class="n">three</span> <span class="n">spatial</span> <span class="n">modes</span>
+<span class="n">mode1</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span> <span class="mi">1</span><span class="p">);</span> <span class="o">%</span> <span class="n">First</span> <span class="n">spatial</span> <span class="n">mode</span>
+<span class="n">mode2</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span> <span class="mi">2</span><span class="p">);</span> <span class="o">%</span> <span class="n">Second</span> <span class="n">spatial</span> <span class="n">mode</span>
+<span class="n">mode3</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">%</span> <span class="n">Third</span> <span class="n">spatial</span> <span class="n">mode</span>
+
+<span class="o">%</span> <span class="n">Plot</span> <span class="n">the</span> <span class="n">first</span> <span class="n">three</span> <span class="n">spatial</span> <span class="n">modes</span> <span class="n">versus</span> <span class="n">x</span>
+<span class="n">figure</span><span class="p">;</span>
+<span class="n">hold</span> <span class="n">on</span><span class="p">;</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">mode1</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">mode2</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">mode3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">off</span><span class="p">;</span>
+
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Space (x)&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (T)&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Case I: First Three Spatial Modes vs. x&#39;</span><span class="p">);</span>
+<span class="n">legend</span><span class="p">(</span><span class="s1">&#39;Mode 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Mode 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Mode 3&#39;</span><span class="p">);</span>
+<span class="n">grid</span> <span class="n">on</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Answer</p>
+<p><strong>Case I</strong></p>
+<p><img alt="Case I part 2 result" src="_images/case1_p2.png" /></p>
+<p><strong>Case II</strong></p>
+<p><img alt="Case II part 2 result" src="_images/case2_p2.png" /></p>
+</div>
+</section>
+<section id="part-3-calculations">
+<h2>Part 3 Calculations<a class="headerlink" href="#part-3-calculations" title="Permalink to this heading">#</a></h2>
+<p>The following code was used to plot the results with <span class="math notranslate nohighlight">\(\alpha\)</span> adjusted accordingly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Take</span> <span class="n">the</span> <span class="n">SVD</span>
+<span class="p">[</span><span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span><span class="p">]</span> <span class="o">=</span> <span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+
+<span class="o">%</span> <span class="n">Plot</span> <span class="n">the</span> <span class="n">result</span>
+<span class="n">semilogy</span><span class="p">(</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Singular Value vs r&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Case I: Singular Values&#39;</span><span class="p">);</span>
+
+<span class="o">%</span> <span class="n">Additional</span> <span class="n">customization</span> <span class="k">for</span> <span class="n">aesthetics</span>
+<span class="n">axis</span> <span class="n">tight</span>
+<span class="n">grid</span> <span class="n">on</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Answer</p>
+<p><strong>Case I</strong></p>
+<p><img alt="Case I part 3 result" src="_images/case1_p3.png" /></p>
+<p><strong>Case II</strong></p>
+<p><img alt="Case II part 3 result" src="_images/case2_p3.png" /></p>
+</div>
+</section>
+<section id="part-4-calculations">
+<h2>Part 4 Calculations<a class="headerlink" href="#part-4-calculations" title="Permalink to this heading">#</a></h2>
+<p>The following code was used to plot the results with <span class="math notranslate nohighlight">\(\alpha\)</span> adjusted accordingly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Plot</span> <span class="n">the</span> <span class="n">result</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">cumsum</span><span class="p">(</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">))</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">)),</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cumulative Sum&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Case I: Cumulative Sum of Singular Values vs r&#39;</span><span class="p">);</span>
+
+<span class="o">%</span> <span class="n">Additional</span> <span class="n">customization</span> <span class="k">for</span> <span class="n">aesthetics</span>
+<span class="n">axis</span> <span class="n">tight</span>
+<span class="n">grid</span> <span class="n">on</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Answer</p>
+<p><strong>Case I</strong></p>
+<p><img alt="Case I part 4 result" src="_images/case1_p4.png" /></p>
+<p><strong>Case II</strong></p>
+<p><img alt="Case II part 3 result" src="_images/case2_p4.png" /></p>
+</div>
+</section>
+<section id="part-5-calculations">
+<h2>Part 5 Calculations<a class="headerlink" href="#part-5-calculations" title="Permalink to this heading">#</a></h2>
+<p>The following code was used to plot the results with <span class="math notranslate nohighlight">\(\alpha\)</span> adjusted accordingly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">];</span>
+<span class="n">Aapprox</span> <span class="o">=</span> <span class="n">U</span><span class="p">(:,</span> <span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">V</span><span class="p">(:,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="s1">&#39;;</span>
+
+<span class="o">%</span> <span class="n">Extract</span> <span class="n">the</span> <span class="n">first</span> <span class="n">three</span> <span class="n">spatial</span> <span class="n">modes</span>
+<span class="n">mode1_approx</span> <span class="o">=</span> <span class="n">Aapprox</span><span class="p">(:,</span> <span class="mi">1</span><span class="p">);</span> <span class="o">%</span> <span class="n">First</span> <span class="n">spatial</span> <span class="n">mode</span>
+<span class="n">mode3_approx</span> <span class="o">=</span> <span class="n">Aapprox</span><span class="p">(:,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">%</span> <span class="n">Second</span> <span class="n">spatial</span> <span class="n">mode</span>
+<span class="n">mode5_approx</span> <span class="o">=</span> <span class="n">Aapprox</span><span class="p">(:,</span> <span class="mi">5</span><span class="p">);</span> <span class="o">%</span> <span class="n">Third</span> <span class="n">spatial</span> <span class="n">mode</span>
+
+<span class="o">%</span> <span class="n">Plot</span> <span class="n">the</span> <span class="n">first</span> <span class="n">three</span> <span class="n">spatial</span> <span class="n">modes</span> <span class="n">versus</span> <span class="n">x</span>
+<span class="n">figure</span><span class="p">;</span>
+<span class="n">hold</span> <span class="n">on</span><span class="p">;</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">mode1_approx</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">mode3_approx</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">mode5_approx</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">off</span><span class="p">;</span>
+
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Space (x)&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (T)&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Case I: ROM r = 1 vs. x&#39;</span><span class="p">);</span>
+<span class="n">legend</span><span class="p">(</span><span class="s1">&#39;Mode 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Mode 3&#39;</span><span class="p">,</span> <span class="s1">&#39;Mode 5&#39;</span><span class="p">);</span>
+<span class="n">grid</span> <span class="n">on</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Answer</p>
+<p><strong>Case I</strong></p>
+<p><img alt="Case I r1 part 5 result" src="_images/case1_r1_p5.png" /></p>
+<br>
+<p><img alt="Case I r2 part 5 result" src="_images/case1_r2_p5.png" /></p>
+<p><strong>Case II</strong></p>
+<p><img alt="Case II r1 part 5 result" src="_images/case2_r1_p5.png" /></p>
+<br>
+<p><img alt="Case II r2 part 5 result" src="_images/case2_r2_p5.png" /></p>
+</div>
+</section>
+<section id="part-6-calculations">
+<h2>Part 6 Calculations<a class="headerlink" href="#part-6-calculations" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-calculations">Part 1 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-calculations">Part 2 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-calculations">Part 3 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-calculations">Part 4 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-calculations">Part 5 Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-calculations">Part 6 Calculations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
